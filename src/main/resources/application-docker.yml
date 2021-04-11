@@ -1,0 +1,25 @@
+logging:
+  level:
+    ROOT: INFO
+spring:
+  #  profiles:
+  #    active: dev
+  #    include:
+  # Uncomment to activate TLS for the dev profile
+  #- tls
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: false # we use Webpack dev server + BrowserSync for livereload
+  jackson:
+    serialization:
+      indent-output: true
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017
+      database: DiscworlCharacters
+server:
+  port: 8196
+application:
+  springFoxUrl: http://localhost:8196

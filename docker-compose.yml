@@ -1,0 +1,15 @@
+version: "2.1"
+services:
+  app:
+    # replace imageName with your image name (block in your case)
+    image: discworld-characters
+    ports:
+      - 8196:8196 # Replace the port of your application here if used
+    depends_on:
+      - discworld-mongodb
+  discworld-mongodb:
+    image: mongo:4.2.3
+    ports:
+      - "27017:27017"
+    container_name: mongodb
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]

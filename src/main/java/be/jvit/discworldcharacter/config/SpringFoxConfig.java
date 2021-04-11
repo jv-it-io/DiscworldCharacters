@@ -18,8 +18,16 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SpringFoxConfig {
 
-    @Value("${swagger.host.url}")
+    private final ApplicationProperties applicationProperties;
+
+//    @Value("${swagger.host.url}")
     private String hostUrl;
+
+    public SpringFoxConfig(ApplicationProperties applicationProperties) {
+        this.applicationProperties = applicationProperties;
+        hostUrl = applicationProperties.getSpringFoxUrl();
+    }
+
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)

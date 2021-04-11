@@ -14,7 +14,7 @@ import java.util.List;
  * @project DiscWorldCharacter
  */
 @RestController
-@RequestMapping(path = "api/v1/wizards")
+@RequestMapping(path = "api/v1/wizzards")
 @AllArgsConstructor
 public class WizzardController {
 
