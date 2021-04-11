@@ -1,0 +1,24 @@
+version: "2.1"
+services:
+  discworld-mongodb:
+    image: mongo:4.2.3
+    ports:
+      - "27017:27017"
+    container_name: mongodb
+    command: --bind_ip_all --replSet rs0 --enableMajorityReadConcern false
+    # See README to configure mongo replicaset
+
+#TODO multiple replicaset
+#    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]
+#  discworld-mongodb-secondary:
+#    image: mongo:4.2.3
+#    ports:
+#      - "27018:27018"
+#    container_name: mongodb-secondary
+#    command: --bind_ip_all --replSet rs0 --enableMajorityReadConcern false
+#  discworld-mongodb-arbiter:
+#      image: mongo:4.2.3
+#      ports:
+#        - "27019:27019"
+#      container_name: mongodb-arbiter
+#      command: --bind_ip_all --replSet rs0 --enableMajorityReadConcern false
