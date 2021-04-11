@@ -1,6 +1,7 @@
 package be.jvit.discworldcharacter.service;
 
 import be.jvit.discworldcharacter.domain.Wizzard;
+import javassist.NotFoundException;
 
 import java.util.List;
 
@@ -14,5 +15,5 @@ public interface WizzardService {
 
     void addWizzard(Wizzard wizzard);
 
-    void deleteWizzard(Long wizardId);
+    void deleteWizzard(String wizardId) throws NotFoundException;
 }

@@ -2,6 +2,7 @@ package be.jvit.discworldcharacter.controller;
 
 import be.jvit.discworldcharacter.domain.Wizzard;
 import be.jvit.discworldcharacter.service.WizzardService;
+import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +33,11 @@ public class WizzardController {
 
     @DeleteMapping(path = "{wizzardId}")
     public void deleteWizard(
-            @PathVariable("wizzardId") Long wizzardId) {
-        wizzardService.deleteWizzard(wizzardId);
+            @PathVariable("wizzardId") String wizzardId) {
+        try {
+            wizzardService.deleteWizzard(wizzardId);
+        } catch (NotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
