@@ -12,4 +12,6 @@ services:
     ports:
       - "27017:27017"
     container_name: mongodb
+    command: --bind_ip_all --replSet rs0 --enableMajorityReadConcern false
 #    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]
+# See README to configure mongo replicaset
