@@ -1,5 +1,6 @@
 package be.jvit.discworldcharacter.config;
 
+import com.github.cloudyrock.spring.v5.EnableMongock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
@@ -15,6 +16,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @Configuration
 @EnableMongoRepositories("be.jvit.discworldcharacter.repository")
 @Import(value = MongoAutoConfiguration.class)
+@EnableMongock
 //@EnableMongoAuditing(auditorAwareRef = "springSecurityAuditorAware")
 public class DatabaseConfiguration {
 
@@ -25,6 +27,16 @@ public class DatabaseConfiguration {
     public DatabaseConfiguration(ApplicationProperties applicationProperties) {
         this.applicationProperties = applicationProperties;
     }
+
+//    @Bean
+//    @ConditionalOnProperty( prefix = "application", name = "mongock.enable", havingValue = "true")
+//    public MongockConfiguration mongock(MongoTemplate mongoTemplate, ApplicationContext springContext, Environment environment) {
+//        return  MongockSpring5.builder(mongoTemplate, applicationProperties.getMongock().getPath())
+//                .setApplicationContext(springContext)
+//                .setSpringEnvironment(environment)
+//                .setLockQuickConfig()
+//                .build();
+//    }
 //
 //    @Bean
 //    public ValidatingMongoEventListener validatingMongoEventListener() {

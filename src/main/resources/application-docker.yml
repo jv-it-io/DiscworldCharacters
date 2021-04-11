@@ -23,3 +23,5 @@ server:
   port: 8196
 application:
   springFoxUrl: http://localhost:8196
+mongock:
+  change-logs-scan-package: be.jvit.discworldcharacter.config.dbmigrations

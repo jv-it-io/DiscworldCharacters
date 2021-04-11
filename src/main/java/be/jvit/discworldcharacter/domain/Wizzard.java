@@ -16,6 +16,7 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Document
 public class Wizzard implements Serializable {
 

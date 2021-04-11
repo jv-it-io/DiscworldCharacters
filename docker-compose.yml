@@ -12,4 +12,4 @@ services:
     ports:
       - "27017:27017"
     container_name: mongodb
-    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]
+#    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]
