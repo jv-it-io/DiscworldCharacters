@@ -1,4 +1,4 @@
-# DiscworldCharecters
+# DiscworldCharacters
 How to configure replicaset mongodb : run docker exec -it mongodb mongo
 
 in the mongo shell
