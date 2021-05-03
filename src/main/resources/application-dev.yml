@@ -22,6 +22,12 @@ spring:
       database: DiscworlCharacters
 server:
   port: 8196
+management:
+  endpoint:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
 application:
   springFoxUrl: http://localhost:8196
   mongock:

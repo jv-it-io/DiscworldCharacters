@@ -3,6 +3,7 @@ package be.jvit.discworldcharacter.service.impl;
 import be.jvit.discworldcharacter.domain.Wizzard;
 import be.jvit.discworldcharacter.repository.WizzardRepository;
 import be.jvit.discworldcharacter.service.WizzardService;
+import io.micrometer.core.annotation.Timed;
 import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ public class WizzardServiceImpl implements WizzardService {
     private final WizzardRepository wizzardRepository;
 
     @Override
+    @Timed(value = "ServicegetAllWizzard.time", description = "Time taken to return all wizzards with the service")
     public List<Wizzard> getAllWizzards() {
         return wizzardRepository.findAll();
     }
