@@ -67,5 +67,35 @@ configure a new job_name ine Yaml of prometheus to use actuator of the app :
     static_configs:
       - targets: ['localhost:8196']
 
+---------------------------------------------
+#metrics with influxDB and Chronograf
+
+to have more metrics expose to to actuator metrics : 
+
+    management:
+        endpoint:
+            endpoints:
+                web:
+                    exposure:
+                        include: health,info,prometheus,metrics
+
+Add configuration for InfluxDB :
+
+    metrics:
+        export:
+            influx:
+                db: wizzards
+                uri: http://localhost:8086 # URI of the Influx server. (Default: http://localhost:8086)
+                step: 1m # Step size (i.e. reporting frequency) to use. (Default: 1m)
+                auto-create-db: true # Whether to create the Influx database if it does not exist before attempting to publish metrics to it. (Default: true)
+
+
+Chronograf visual board for InfluxDB : http://localhost:8888/
+
+--------------------------------------------
+#metrics in grafana
+
+url grafana : http://localhost:3000/
+
 
     
