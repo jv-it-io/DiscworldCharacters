@@ -21,6 +21,20 @@ spring:
       database: DiscworlCharacters
 server:
   port: 8196
+management:
+  endpoint:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  metrics:
+    export:
+      influx:
+        db: wizzards
+        uri: http://influxdb:8086 # URI of the Influx server. (Default: http://localhost:8086)
+        step: 1m # Step size (i.e. reporting frequency) to use. (Default: 1m)
+        auto-create-db: false # Whether to create the Influx database if it does not exist before attempting to publish metrics to it. (Default: true)
+
 application:
   springFoxUrl: http://localhost:8196
 mongock:
