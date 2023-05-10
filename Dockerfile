@@ -1,4 +1,4 @@
-FROM openjdk:11-jdk-buster
+FROM openjdk:21-jdk-buster
 
 WORKDIR /app
 COPY ./target/DiscWorldCharacter-0.0.2-SNAPSHOT.jar /app
